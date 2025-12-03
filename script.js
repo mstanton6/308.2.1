@@ -14,15 +14,19 @@ const maxcapacity = PI * radius * radius;
 let plantspace = 0.8;
 let numplants = 20;
 let doublerate = 2;
-let numweeks = 2;
+let numweeks = 3;
 
-let doublerateuse = doublerate * numweeks;   // Get the double rate based on how many weeks it has been
+console.log('Number of weeks = ' + numweeks
 
-// console.log('Max area of the garden is: ' + maxcapacity);
+)
 
-let areaneeded = (numplants * doublerateuse) * plantspace;  
+let doublerateuse = doublerate * numweeks;   // Get the total double rate based on how many weeks it has been
 
-// console.log('Area needed: ' + areaneeded);
+ // console.log('Max area of the garden is: ' + maxcapacity);
+
+let areaneeded = (numplants * doublerateuse) * plantspace;  // area needed
+
+ // console.log('Area needed: ' + areaneeded);
 
 let plantcount = areaneeded / maxcapacity;   // this is the area needed by the current number of plants
 
@@ -36,7 +40,7 @@ else if (plantcount < .5) {
     console.log('Planted');
 }
 
-}
+}  // end the try
 
 catch (err) {
   console.error(err);

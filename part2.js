@@ -12,21 +12,29 @@ let radius = 5;
 const PI = 3.1415;
 const maxcapacity = PI * radius * radius;
 let plantspace = 0.8;
-let numplants = 100;
+let beginingPlants = 100;
 let doublerate = 2;
-let numweeks = 3;
+let numweeks = 10;
 
-console.log('Number of weeks = ' + numweeks
+let plantsPerWeek = beginingPlants * 2 ** numweeks;
 
-)
+console.log('plants per week = ' + plantsPerWeek);
 
-let doublerateuse = doublerate * numweeks;   // Get the total double rate based on how many weeks it has been
+console.log('Number of weeks = ' + numweeks);
 
- // console.log('Max area of the garden is: ' + maxcapacity);
+console.log('Max area of the garden is: ' + maxcapacity);
 
-let areaneeded = (numplants * doublerateuse) * plantspace;  // area needed
+let areaneeded = plantsPerWeek  * plantspace;  // area needed
 
- // console.log('Area needed: ' + areaneeded);
+console.log('Area needed: ' + areaneeded);
+
+let addlspacereq = areaneeded - maxcapacity;
+
+console.log('The amount of additional space that would be required if the scientists were to start with 100 plants, and did not prune them for 10 weeks is: ' + addlspacereq);
+
+let newradius = Math.sqrt((areaneeded / PI)); // new radius = sqrt(Area / PI)
+
+console.log('The new radius of the expanded garden would be ' + newradius + ' meters')
 
 let plantcount = areaneeded / maxcapacity;   // this is the area needed by the current number of plants
 

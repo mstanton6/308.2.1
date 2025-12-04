@@ -22,9 +22,7 @@ console.log('plants per week = ' + plantsPerWeek);
 
 console.log('Number of weeks = ' + numweeks);
 
-let doublerateuse = doublerate * numweeks;   // Get the total double rate based on how many weeks it has been
-
-  console.log('Max area of the garden is: ' + maxcapacity);
+console.log('Max area of the garden is: ' + maxcapacity);
 
 let areaneeded = plantsPerWeek  * plantspace;  // area needed
 

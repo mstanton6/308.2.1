@@ -13,8 +13,7 @@ const PI = 3.1415;
 const maxcapacity = PI * radius * radius;
 let plantspace = 0.8;
 let beginingPlants = 20;
-let doublerate = 2;
-let numweeks = 3;
+let numweeks = 2;
 
 let plantsPerWeek = beginingPlants * 2 ** numweeks;
 
@@ -26,6 +25,10 @@ console.log('Max area of the garden is: ' + maxcapacity);
 
 let areaneeded = plantsPerWeek  * plantspace;  // area needed
 
+if (areaneeded > maxcapacity) {
+
+   throw new Error("The amount of space required to hold the originally provided number of plants exceeds the amount of space available.");
+}
   console.log('Area needed: ' + areaneeded);
 
 let plantcount = areaneeded / maxcapacity;   // this is the area needed by the current number of plants
@@ -33,7 +36,7 @@ let plantcount = areaneeded / maxcapacity;   // this is the area needed by the c
 if (plantcount > .8) {
     console.log('Prune');
 }
-else if (plantcount <= .5 && plantcount <= .8) {
+else if (plantcount >= .5 && plantcount <= .8) {
     console.log('Monitored');
 }
 else if (plantcount < .5) {
